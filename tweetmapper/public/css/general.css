@@ -1,0 +1,59 @@
+body {
+    padding-top: 50px;
+}
+
+.center {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+#search {
+    display: none;
+}
+
+#handle {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#loading {
+    display: none;
+}
+
+.twitterlogo {
+    content:url("../img/twitter.png");
+    margin-top: -14px;
+    width: 150px;
+}
+
+caption {
+    text-align: center;
+}
+
+#results {
+    display: none;
+}
+
+/* Spinning Loading */
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -ms-animation: spin .7s infinite linear;
+    -webkit-animation: spinw .7s infinite linear;
+    -moz-animation: spinm .7s infinite linear;
+}
+ 
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+  
+@-webkit-keyframes spinw {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+ 
+@-moz-keyframes spinm {
+    from { -moz-transform: rotate(0deg);}
+    to { -moz-transform: rotate(360deg);}
+}
+/* /Spinning Loading */
