@@ -1,4 +1,4 @@
-# Project Name #
+Tweet Mapper
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -17,28 +17,37 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
+  Tweet Mapper
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
 ## Sub-Heading ##
+  Visual map of locations a user has tweeted from.
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
 
 ## Summary ##
+  Tweet Mapper provides a nice visual map of the world filled with markers signifying locations of tweets from a supplied user. The amount of data that is shown can be easily filtered and adjusted to your needs. It uses the Twitter API and Google Maps API in order to fetch location data and a mapping solution respectively.
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
 ## Problem ##
+  Creats a visual map pinpointing the location a user is tweeting from vs the name of a place with no map.
   > Describe the problem your product solves.
 
 ## Solution ##
+  Will use the Google Maps API to elegantly place a marker of the location a tweet is from.
   > Describe how your product elegantly solves the problem.
 
 ## Quote from You ##
+  "This service is amazing! Buy if now!"
   > A quote from a spokesperson in your company.
 
 ## How to Get Started ##
+  "It is super easy! Just provide the service with a twitter handler and it'll return a map of all the locations a user has tweeted from."
   > Describe how easy it is to get started.
 
 ## Customer Quote ##
+  "I know where Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu is now!"
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
 ## Closing and Call to Action ##
+  Try it out with your own Twitter Handler.
   > Wrap it up and give pointers where the reader should go next.
