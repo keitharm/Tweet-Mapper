@@ -4,7 +4,7 @@ var settings = require('../settings.json');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: settings.title });
+  res.render('index', { title: settings.general.title });
 });
 
 router.get('/fetchUser/:user', function(req, res, next) {

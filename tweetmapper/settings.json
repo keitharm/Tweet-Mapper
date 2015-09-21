@@ -1,3 +1,9 @@
 {
-  "title": "Tweet Mapper"
+  "general": {
+    "title": "Tweet Mapper"
+  },
+  "twitter": {
+    "consumer_key": "",
+    "consumer_secret": ""
+  }
 }
