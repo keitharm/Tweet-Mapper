@@ -1,5 +1,14 @@
-body {
+html, body {
     padding-top: 50px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    margin-top: 100px;
+    height: 75%;
+    display: none;
 }
 
 .center {
