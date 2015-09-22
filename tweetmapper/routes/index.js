@@ -1,6 +1,9 @@
-var express = require('express');
-var router = express.Router();
+var Fetcher  = require('../Fetcher.js');
+var Tweet    = require('../Tweet.js');
+var express  = require('express');
+var router   = express.Router();
 var settings = require('../settings.json');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -8,8 +11,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/fetchUser/:user', function(req, res, next) {
-  var user = req.params.user;
-  res.send(user);
+  var user = new Fetcher(req.params.user);
+  user.getTweets(5, function(data) {
+    res.send(data);
+  });
 });
 
 module.exports = router;
