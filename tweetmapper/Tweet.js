@@ -30,12 +30,11 @@ Tweet.prototype.getStatus = function() {
 };
 
 Tweet.prototype.getID = function() {
-  return this.data.id;
+  return this.data.id_str;
 };
 
 Tweet.prototype.getDate = function() {
   return this.data.created_at;
-}
-
+};
 
 module.exports = Tweet;
