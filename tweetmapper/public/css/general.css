@@ -6,7 +6,6 @@ html, body {
 }
 
 #map {
-    margin-top: 75px;
     height: 60%;
     display: none;
 }
@@ -33,6 +32,10 @@ iframe {
 }
 
 #loading {
+    display: none;
+}
+
+#noTweets {
     display: none;
 }
 

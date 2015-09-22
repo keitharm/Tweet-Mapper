@@ -15,7 +15,7 @@ $(function() {
 
     $.ajax({
       type: 'GET',
-      url: '/fetchUser/' + $('#handle').val() + '/3200',
+      url: '/fetchUser/' + user + '/3200',
       success: function (data) {
         window.sent = data;
         var coords = data;
@@ -25,50 +25,29 @@ $(function() {
             center: {lat: avg[0], lng: avg[1]},
             zoom: 3
           });
-          $("#map").fadeIn(1000, function() {
-            $("#tweet").show();
-            var tot = coords.info.received;
-            for (var i = 0; i < tot; i++) {
-              var interval;
-              if (tot < 50) {
-                interval = 50
-              } else if (tot < 100) {
-                interval = 25;
-              } else if (tot < 200) {
-                interval = 15;
-              } else if (tot < 600) {
-                interval = 6;
-              } else {
-                interval = 3;
+          if (coords.info.received) {
+            $("#map, #stats").fadeIn(1000, function() {
+              $("#tweet").show();
+              var tot = coords.info.received;
+              for (var i = 0; i < tot; i++) {
+                var interval;
+                if (tot < 50) {
+                  interval = 50
+                } else if (tot < 100) {
+                  interval = 25;
+                } else if (tot < 200) {
+                  interval = 15;
+                } else if (tot < 600) {
+                  interval = 6;
+                } else {
+                  interval = 3;
+                }
+                addMarkerWithTimeout(coords.coords[i].coords, i * interval, i);
               }
-              addMarkerWithTimeout(coords.coords[i].coords, i * interval, i);
-            }
-
-            // coords.coords.forEach(function(coord) {
-            //   var coord = coord.coords
-            //   new google.maps.Marker({
-            //     map: map,
-            //     animation: google.maps.Animation.DROP,
-            //     position: {lat: coord[0], lng: coord[1]}
-            //   });
-            //});
-            /*
-            marker = new google.maps.Marker({
-              map: map,
-              animation: google.maps.Animation.DROP,
-              position: {lat: avg[0], lng: avg[1]}
             });
-            */
-            /*
-            quad(0, 0, coords.info.received, 5000);
-            function quad(t, b, c, d) {
-              t /= d/2;
-              if (t < 1) return c/2*t*t + b;
-              t--;
-              return -c/2 * (t*(t-2) - 1) + b;
-            };
-            */
-          });
+          } else {
+            $("#noTweets").fadeIn(1000);
+          }
         })
       }
     });
