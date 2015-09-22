@@ -86,7 +86,6 @@ Fetcher.prototype.getTweets = function(amount, cb) {
             var first = new Tweet(data[0]);
             var last = new Tweet(data[data.length-1]);
             latestID = last.getID();
-            //data.splice(0, 1);
             tweets = tweets.concat(data);
             if (amount === 0) {
               done = true;

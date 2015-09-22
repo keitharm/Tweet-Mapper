@@ -6,14 +6,17 @@ html, body {
 }
 
 #map {
-    margin-top: 100px;
-    height: 75%;
+    margin-top: 75px;
+    height: 60%;
     display: none;
 }
 
 .center {
     padding: 40px 15px;
     text-align: center;
+}
+#tweet {
+    display: none;
 }
 
 #search {
@@ -23,6 +26,10 @@ html, body {
 #handle {
     margin-top: 20px;
     text-align: center;
+}
+
+iframe {
+    display: inline-block !important;
 }
 
 #loading {
@@ -37,10 +44,6 @@ html, body {
 
 caption {
     text-align: center;
-}
-
-#results {
-    display: none;
 }
 
 /* Spinning Loading */
