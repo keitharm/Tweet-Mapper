@@ -10,9 +10,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: settings.general.title });
 });
 
-router.get('/fetchUser/:user', function(req, res, next) {
-  var user = new Fetcher(req.params.user);
-  user.getTweets(5, function(data) {
+router.get('/fetchUser/:user/:requests?', function(req, res, next) {
+  var user     = new Fetcher(req.params.user);
+  var requests = req.params.requests;
+  user.getTweets(requests, function(data) {
+    console.log("a");
     res.send(data);
   });
 });
