@@ -14,8 +14,28 @@ router.get('/fetchUser/:user/:requests?', function(req, res, next) {
   var user     = new Fetcher(req.params.user);
   var requests = req.params.requests;
   user.getTweets(requests, function(data) {
-    console.log("a");
-    res.send(data);
+    var coords = [];
+    data.forEach(function(tweet) {
+      var tweet = new Tweet(tweet);
+      var t_coords = tweet.getCoords(true);
+      if (t_coords.length !== 0) {
+        coords.push({
+          coords: t_coords,
+          coords_str: tweet.getCoords(),
+          status: tweet.getStatus(),
+          date: tweet.getDate(),
+          id: tweet.getID()
+        });
+      }
+    });
+    res.send({
+      info: {
+        requested: +(requests ? requests : 10),
+        received: coords.length,
+        percent: (Math.floor((coords.length/+(requests ? requests : 10))*10000)/100) + "%"
+      },
+      coords: coords
+    });
   });
 });
 
