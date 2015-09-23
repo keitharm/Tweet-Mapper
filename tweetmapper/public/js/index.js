@@ -1,5 +1,8 @@
 $(function() {
   window.markers = [];
+  window.stats = {
+    cur: 0
+  };
 
   // Slide down at start
   $("#search").slideDown(1000);
@@ -20,6 +23,10 @@ $(function() {
         window.sent = data;
         var coords = data;
         var avg = avgCoords(coords);
+        $("#stats_user").html(user);
+        stats["total"] = coords.info.total;
+        $("#stats_total").html(stats["total"]);
+
         $("#loading").fadeOut(1000, function() {
           window.map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: avg[0], lng: avg[1]},
@@ -60,10 +67,11 @@ $(function() {
     }, [0,0]);
     var avg = [sum[0]/coords.info.received, sum[1]/coords.info.received];
     return avg;
-  }
+  };
 
   var addMarkerWithTimeout = function(position, timeout, index) {
     window.setTimeout(function() {
+
       var marker = new google.maps.Marker({
         position: {lat: position[0], lng: position[1]},
         map: map,
@@ -76,6 +84,12 @@ $(function() {
       });
 
       markers.push(marker);
+      $("#stats_cur").html(Math.floor(++stats["cur"]/2));
+      $("#stats_per").html(pad(Math.round((stats["cur"]/2)/stats["total"]*10000)/100));
     }, timeout);
-  }
+  };
+
+  var pad = function (n) {
+    return (n < 10) ? ("0" + n) : n;
+  };
 });

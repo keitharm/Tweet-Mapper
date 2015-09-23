@@ -44,6 +44,15 @@ iframe {
     margin-top: -14px;
     width: 150px;
 }
+#stats {
+    display: none;
+    margin-top: 60px;
+    text-align: center;
+}
+
+#stats_txt {
+    font-size: 16pt;
+}
 
 caption {
     text-align: center;

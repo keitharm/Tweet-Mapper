@@ -32,6 +32,7 @@ router.get('/fetchUser/:user/:requests?', function(req, res, next) {
       info: {
         requested: +(requests ? requests : 10),
         received: coords.length,
+        total: data.length,
         percent: (Math.floor((coords.length/+(requests ? requests : 10))*10000)/100) + "%"
       },
       coords: coords
